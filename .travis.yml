@@ -13,10 +13,12 @@ install:
   - pip install pytest pytest-cov
   - pip install .
 
-# Run the unit test
 script:
-  - pytest --cov=deepsurf
+  - py.test  --cov-report term --cov=app/test/
+
+env:
+  - CODECOV_TOKEN=3be39d4f-63a7-494d-8581-4669de5cce1c
 
 # Push the results back to codecov
 after_success:
-  - codecov --token=3be39d4f-63a7-494d-8581-4669de5cce1c
+  - codecov
