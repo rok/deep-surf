@@ -13,8 +13,8 @@ install:
 
 # Run the unit test
 script:
-  - pytest
+  - pytest --cov=deepsurf
 
 # Push the results back to codecov
 after_success:
-  - codecov
+  - codecov --token=3be39d4f-63a7-494d-8581-4669de5cce1c
